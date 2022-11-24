@@ -1,0 +1,214 @@
+.gauge-tachometer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+.gauge-tachometer::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  width: 4px;
+  height: 8px;
+  background-color: white;
+}
+
+.gauge-tachometer span {
+  display: inline-block;
+  margin: 16px;
+}
+
+.gauge-tachometer.zero {
+  transform: rotate(240deg);
+}
+.gauge-tachometer.zero span {
+  transform: rotate(-240deg);
+}
+
+.gauge-tachometer.one {
+  transform: rotate(270deg);
+}
+.gauge-tachometer.one span {
+  transform: rotate(-270deg);
+}
+
+.gauge-tachometer.two {
+  transform: rotate(300deg);
+}
+.gauge-tachometer.two span {
+  transform: rotate(-300deg);
+}
+
+.gauge-tachometer.three {
+  transform: rotate(330deg);
+}
+.gauge-tachometer.three span {
+  transform: rotate(-330deg);
+}
+
+.gauge-tachometer.four {
+  transform: rotate(0deg);
+}
+.gauge-tachometer.four span {
+  transform: rotate(-0deg);
+}
+
+.gauge-tachometer.five {
+  transform: rotate(30deg);
+}
+.gauge-tachometer.five span {
+  transform: rotate(-30deg);
+}
+
+.gauge-tachometer.six {
+  transform: rotate(60deg);
+}
+.gauge-tachometer.six span {
+  transform: rotate(-60deg);
+}
+
+.gauge-tachometer.seven {
+  transform: rotate(90deg);
+}
+.gauge-tachometer.seven span {
+  transform: rotate(-90deg);
+}
+
+.gauge-tachometer.eight {
+  transform: rotate(120deg);
+}
+.gauge-tachometer.eight span {
+  transform: rotate(-120deg);
+}
+
+.gauge-tachometer-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.gauge-tachometer-mark::before {
+  content: '';
+  display: block;
+  width: 2px;
+  height: 8px;
+  margin-top: 8px;
+  background-color: var(--blue);
+}
+.gauge-tachometer-mark-limiter::before {
+  background-color: var(--red);
+}
+
+.gauge-tachometer-mark-0-1 {
+  transform: rotate(246deg);
+}
+.gauge-tachometer-mark-0-2 {
+  transform: rotate(252deg);
+}
+.gauge-tachometer-mark-0-3 {
+  transform: rotate(258deg);
+}
+.gauge-tachometer-mark-0-4 {
+  transform: rotate(264deg);
+}
+
+.gauge-tachometer-mark-1-1 {
+  transform: rotate(276deg);
+}
+.gauge-tachometer-mark-1-2 {
+  transform: rotate(282deg);
+}
+.gauge-tachometer-mark-1-3 {
+  transform: rotate(288deg);
+}
+.gauge-tachometer-mark-1-4 {
+  transform: rotate(294deg);
+}
+
+.gauge-tachometer-mark-2-1 {
+  transform: rotate(306deg);
+}
+.gauge-tachometer-mark-2-2 {
+  transform: rotate(312deg);
+}
+.gauge-tachometer-mark-2-3 {
+  transform: rotate(318deg);
+}
+.gauge-tachometer-mark-2-4 {
+  transform: rotate(324deg);
+}
+
+.gauge-tachometer-mark-3-1 {
+  transform: rotate(336deg);
+}
+.gauge-tachometer-mark-3-2 {
+  transform: rotate(342deg);
+}
+.gauge-tachometer-mark-3-3 {
+  transform: rotate(348deg);
+}
+.gauge-tachometer-mark-3-4 {
+  transform: rotate(354deg);
+}
+
+.gauge-tachometer-mark-4-1 {
+  transform: rotate(6deg);
+}
+.gauge-tachometer-mark-4-2 {
+  transform: rotate(12deg);
+}
+.gauge-tachometer-mark-4-3 {
+  transform: rotate(18deg);
+}
+.gauge-tachometer-mark-4-4 {
+  transform: rotate(24deg);
+}
+
+.gauge-tachometer-mark-5-1 {
+  transform: rotate(36deg);
+}
+.gauge-tachometer-mark-5-2 {
+  transform: rotate(42deg);
+}
+.gauge-tachometer-mark-5-3 {
+  transform: rotate(48deg);
+}
+.gauge-tachometer-mark-5-4 {
+  transform: rotate(54deg);
+}
+
+.gauge-tachometer-mark-6-1 {
+  transform: rotate(66deg);
+}
+.gauge-tachometer-mark-6-2 {
+  transform: rotate(72deg);
+}
+.gauge-tachometer-mark-6-3 {
+  transform: rotate(78deg);
+}
+.gauge-tachometer-mark-6-4 {
+  transform: rotate(84deg);
+}
+
+.gauge-tachometer-mark-7-1 {
+  transform: rotate(96deg);
+}
+.gauge-tachometer-mark-7-2 {
+  transform: rotate(102deg);
+}
+.gauge-tachometer-mark-7-3 {
+  transform: rotate(108deg);
+}
+.gauge-tachometer-mark-7-4 {
+  transform: rotate(114deg);
+}
