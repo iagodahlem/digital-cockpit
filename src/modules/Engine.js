@@ -9,16 +9,12 @@ export const Engine = ({ sound }) => {
 
   const init = () => {
     tachometer = document.querySelector('.js-tachometer-pointer')
-    rpm = 1000
+
+    document.addEventListener('keydown', handleKeyDown)
+    document.addEventListener('keyup', handleKeyUp)
 
     setTimeout(() => {
-      render()
-
-      document.addEventListener('keydown', handleThrottle)
-      document.addEventListener('keyup', handleDecelerate)
-
-      sound.start()
-      sound.setSpeed(rpm)
+      toggleOnOff()
     }, 1000)
   }
 
@@ -26,12 +22,42 @@ export const Engine = ({ sound }) => {
     tachometer.style.setProperty('--rotation', (rpm * ratio) / 1000 + 240)
   }
 
-  const handleThrottle = (event) => {
-    if (event.key !== 'ArrowUp') {
-      return
+  const handleKeyDown = (event) => {
+    switch (true) {
+      case event.key === 'ArrowUp':
+        throttle()
+        break
+      default:
+        break
     }
 
-    throttle()
+    render()
+  }
+
+  const handleKeyUp = (event) => {
+    switch (true) {
+      case event.key === 'o':
+        toggleOnOff()
+        break
+      case event.key === 'ArrowUp':
+        decelerate()
+        break
+      default:
+        break
+    }
+
+    render()
+  }
+
+  const toggleOnOff = () => {
+    if (rpm > 0) {
+      rpm = min
+      sound.stop()
+    } else {
+      rpm = initial
+      sound.start()
+    }
+
     render()
     sound.setSpeed(rpm)
   }
@@ -42,20 +68,13 @@ export const Engine = ({ sound }) => {
     }
 
     rpm += 100
-  }
 
-  const handleDecelerate = (event) => {
-    if (event.key !== 'ArrowUp') {
-      return
-    }
-
-    decelerate()
-    render()
     sound.setSpeed(rpm)
   }
 
   const decelerate = () => {
     rpm = initial
+    sound.setSpeed(rpm)
   }
 
   return { init }
