@@ -1,6 +1,6 @@
-@import 'generic/_box-sizing.css';
-@import 'generic/_resets.css';
-@import 'modules/_gauge-tachometer.css';
+@import 'styles/_box-sizing.css';
+@import 'styles/_resets.css';
+@import 'styles/_gauge-tachometer.css';
 
 :root {
   --black: #000;
@@ -10,34 +10,6 @@
 
   --cockpit-width: 1500px;
   --cockpit-height: 440px;
-}
-
-@font-face {
-  font-family: 'VWHead';
-  font-weight: 400;
-  font-style: normal;
-  src: url('./fonts/VWHead-Regular.otf') format('otf');
-}
-
-@font-face {
-  font-family: 'VWHead';
-  font-weight: 700;
-  font-style: normal;
-  src: url('./fonts/VWHead-Bold.otf') format('otf');
-}
-
-@font-face {
-  font-family: 'VWText';
-  font-weight: 400;
-  font-style: normal;
-  src: url('./fonts/VWText-Regular.otf') format('otf');
-}
-
-@font-face {
-  font-family: 'VWText';
-  font-weight: 700;
-  font-style: normal;
-  src: url('./fonts/VWText-Bold.otf') format('otf');
 }
 
 html,
@@ -55,7 +27,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: var(--black);
-  font-family: 'VWText', sans-serif;
+  font-family: 'VWHead';
   font-size: 1.6rem;
   color: #fff;
 }
@@ -66,7 +38,7 @@ body {
   justify-content: space-between;
   width: var(--cockpit-width);
   height: var(--cockpit-height);
-  padding: 0 120px;
+  padding: 0 148px;
 }
 
 .gauge {
@@ -95,7 +67,7 @@ body {
   transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
   box-shadow: 0 0 8px var(--black);
   border-radius: 2px;
-  transition: transform 0.5s linear;
+  transition: transform 0.1s linear;
 }
 
 .gauge-info {

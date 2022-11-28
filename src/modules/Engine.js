@@ -1,60 +1,61 @@
-export const Engine = () => {
+export const Engine = ({ sound }) => {
   const min = 0
   const initial = 1000
   const max = 8000
   const ratio = 30
 
-  let rotation = 0
   let tachometer
+  let rpm = min
 
   const init = () => {
-    rotation = 1000
     tachometer = document.querySelector('.js-tachometer-pointer')
+    rpm = 1000
 
-    render()
+    setTimeout(() => {
+      render()
 
-    document.addEventListener('keydown', handleThrottle)
-    document.addEventListener('keyup', handleDecelerate)
+      document.addEventListener('keydown', handleThrottle)
+      document.addEventListener('keyup', handleDecelerate)
+
+      sound.start()
+      sound.setSpeed(rpm)
+    }, 1000)
   }
 
   const render = () => {
-    tachometer.style.setProperty('--rotation', (rotation * ratio) / 1000 + 240)
+    tachometer.style.setProperty('--rotation', (rpm * ratio) / 1000 + 240)
   }
 
   const handleThrottle = (event) => {
-    switch (true) {
-      case event.key === 'ArrowUp':
-        throttle()
-        render()
-        break
-      default:
-        break
+    if (event.key !== 'ArrowUp') {
+      return
     }
+
+    throttle()
+    render()
+    sound.setSpeed(rpm)
   }
 
   const throttle = () => {
-    console.log(rotation)
-
-    if (rotation > 7000) {
-      rotation -= 2000
+    if (rpm >= max) {
+      rpm -= 1000
     }
 
-    rotation += rotation / 10
+    rpm += 100
   }
 
   const handleDecelerate = (event) => {
-    switch (true) {
-      case event.key === 'ArrowUp':
-        decelerate()
-        render()
-        break
-      default:
-        break
+    if (event.key !== 'ArrowUp') {
+      return
     }
+
+    decelerate()
+    render()
+    sound.setSpeed(rpm)
   }
 
   const decelerate = () => {
-    rotation = initial
+    rpm = initial
   }
 
   return { init }

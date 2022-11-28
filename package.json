@@ -1,18 +1,12 @@
 {
   "private": true,
-  "source": [
-    "src/index.html"
-  ],
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "parcel": "^2.2.1",
-    "postcss": "^8.0.0",
-    "postcss-custom-properties": "^12.1.4",
-    "postcss-import": "^14.0.2",
-    "postcss-url": "^10.1.3"
-  },
-  "dependencies": {}
+    "vite": "^3.2.3",
+    "vite-plugin-fonts": "^0.6.0"
+  }
 }
