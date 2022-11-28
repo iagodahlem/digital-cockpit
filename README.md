@@ -1,5 +1,7 @@
 # digital-cockpit
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4a576906-7e62-4a54-a6d8-94e37a622fae/deploy-status)](https://app.netlify.com/sites/polite-marzipan-2a52ad/deploys)
+
 Digital cockpit implementation.
 
 ## Requirements
